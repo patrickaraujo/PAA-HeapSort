@@ -1,6 +1,6 @@
 package heapSort;
 
-public class HeapTests {
+public class HeapSort_Tests {
 
 	public static int [] gerarNums(int n){
 		int array[]= new int[n];
