@@ -1,5 +1,7 @@
 package heapSort;
 
+import java.io.IOException;
+
 public class HeapSort_Tests {
 
 	public static int [] gerarNums(int n){
@@ -23,17 +25,23 @@ public class HeapSort_Tests {
         System.out.println();
     }
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		int array[]= gerarNums(11);
-		System.out.println("Vetor nao ordenado");
+		int array[]= gerarNums(10000);
+		System.out.println("Heap sort\n\nVetor nao ordenado");
 		printArray(array);
+		
+		long tempoInicial = System.currentTimeMillis();
 		
 		HeapSort heapSort = new HeapSort(array);
 		heapSort.Sort();
 		
-		System.out.println("Vetor ordenado");
+		long tempoFinal = System.currentTimeMillis();
+		
+		System.out.println("\nVetor ordenado");
 		printArray(heapSort.returnSortedArray());
+		
+		System.out.println("\nExecutado em = " + (tempoFinal - tempoInicial) + " ms");
 	}
 
 }
